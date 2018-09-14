@@ -10,31 +10,28 @@ namespace MinhaLojaCore
 {
     public class Startup
     {
-        private readonly IConfiguration configuration;
+        private readonly IConfiguration _configuration;
 
         public Startup(IConfiguration configuration)
         {
-            this.configuration = configuration;
+            this._configuration = configuration;
         }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            var connectionString = configuration["ConnectionStrings:DefaultConnection"];
+            var connectionString = _configuration["ConnectionStrings:DefaultConnection"];
 
             services.AddDbContext<MinhaLojaContexto>(opts => opts.UseNpgsql(connectionString));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
-
         }
     }
 }

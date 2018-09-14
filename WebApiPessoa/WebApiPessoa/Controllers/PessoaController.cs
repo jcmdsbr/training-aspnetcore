@@ -7,12 +7,10 @@ using WebApiPessoa.Repositorio;
 
 namespace WebApiPessoa.Controllers
 {
-
     [RoutePrefix("api/pessoa")]
     [ValidadorRequisicao]
     public class PessoaController : ApiController
     {
-
         [Route("consultarPorNome/{nome}")]
         [HttpGet]
         public HttpResponseMessage ConsultarPorNome(string nome)
@@ -39,7 +37,7 @@ namespace WebApiPessoa.Controllers
         }
 
         [HttpPost]
-        public HttpResponseMessage Post([FromBody]Pessoa pessoa)
+        public HttpResponseMessage Post([FromBody] Pessoa pessoa)
         {
             PessoaContexto.Add(pessoa);
 
@@ -73,6 +71,5 @@ namespace WebApiPessoa.Controllers
 
             return Request.CreateResponse(HttpStatusCode.NoContent);
         }
-
     }
 }

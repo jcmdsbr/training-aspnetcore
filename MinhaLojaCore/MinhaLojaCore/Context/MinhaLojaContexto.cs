@@ -7,8 +7,9 @@ namespace MinhaLojaCore.Context
     public class MinhaLojaContexto : DbContext
     {
         public MinhaLojaContexto(DbContextOptions<MinhaLojaContexto> options)
-        : base(options)
-        { }
+            : base(options)
+        {
+        }
 
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Fabricante> Fabricantes { get; set; }

@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using MinhaLojaCore.Context;
 using MinhaLojaCore.Models;
-using System;
-using System.Linq;
 
 namespace MinhaLojaCore.Controllers
 {
@@ -10,17 +10,17 @@ namespace MinhaLojaCore.Controllers
     [ApiController]
     public class FabricanteController : Controller
     {
-        private readonly MinhaLojaContexto minhaLojaContexto;
+        private readonly MinhaLojaContexto _minhaLojaContexto;
 
         public FabricanteController(MinhaLojaContexto minhaLojaContexto)
         {
-            this.minhaLojaContexto = minhaLojaContexto;
+            _minhaLojaContexto = minhaLojaContexto;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var fabricantes = minhaLojaContexto.Fabricantes.ToList();
+            var fabricantes = _minhaLojaContexto.Fabricantes.ToList();
 
             return Ok(fabricantes);
         }
@@ -28,7 +28,7 @@ namespace MinhaLojaCore.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
-            var fabricante = minhaLojaContexto.Fabricantes.FirstOrDefault(x => x.Id == id);
+            var fabricante = _minhaLojaContexto.Fabricantes.FirstOrDefault(x => x.Id == id);
 
             if (fabricante == null) return NoContent();
 
@@ -42,13 +42,13 @@ namespace MinhaLojaCore.Controllers
             fabricante.Id = Guid.NewGuid();
 
             // adiciona novo fabricante ao banco de dados
-            minhaLojaContexto.Fabricantes.Add(fabricante);
+            _minhaLojaContexto.Fabricantes.Add(fabricante);
 
             // salva alterações feitas. 
-            minhaLojaContexto.SaveChanges();
+            _minhaLojaContexto.SaveChanges();
 
             // retorna nova lista.
-            return Ok(minhaLojaContexto.Fabricantes.ToList());
+            return Ok(_minhaLojaContexto.Fabricantes.ToList());
         }
     }
 }

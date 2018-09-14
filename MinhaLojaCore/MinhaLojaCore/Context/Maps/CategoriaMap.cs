@@ -13,10 +13,10 @@ namespace MinhaLojaCore.Context.Maps
             builder.HasKey(f => f.Id);
 
             builder.Property(f => f.Id)
-               .HasColumnName("cd_categoria");
+                .HasColumnName("cd_categoria");
 
             builder.Property(f => f.Descricao)
-               .HasColumnName("dc_categoria");
+                .HasColumnName("dc_categoria");
 
             //Map HasMany Produtos
             builder.HasMany(s => s.Produtos)

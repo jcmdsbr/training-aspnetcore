@@ -14,16 +14,16 @@ namespace MinhaLojaCore.Context.Maps
 
             // Map propriedades do produto
             builder.Property(f => f.Id)
-               .HasColumnName("cd_produto");
+                .HasColumnName("cd_produto");
 
             builder.Property(f => f.Descricao)
-               .HasColumnName("dc_produto");
+                .HasColumnName("dc_produto");
 
             builder.Property(f => f.Nome)
-             .HasColumnName("nm_produto");
+                .HasColumnName("nm_produto");
 
             builder.Property(f => f.DataDeFabricacao)
-              .HasColumnName("dt_fabricacao");
+                .HasColumnName("dt_fabricacao");
 
 
             //Map FK Fabricante

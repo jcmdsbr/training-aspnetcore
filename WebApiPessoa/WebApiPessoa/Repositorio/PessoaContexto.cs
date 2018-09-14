@@ -7,13 +7,12 @@ namespace WebApiPessoa.Repositorio
 {
     public static class PessoaContexto
     {
-
         private static readonly List<Pessoa> _pessoas = new List<Pessoa>
         {
-            new Pessoa(1,"444.222.098-25","FelipãoDev",DateTime.Now),
-            new Pessoa(2,"444.222.999-25", "ClaudinhaDev", DateTime.Now),
-            new Pessoa(3,"444.222.198-25", "RonaldinhoDev", DateTime.Now),
-            new Pessoa(4,"444.222.294-29", "DilminhaDev", DateTime.Now)
+            new Pessoa(1, "444.222.098-25", "FelipãoDev", DateTime.Now),
+            new Pessoa(2, "444.222.999-25", "ClaudinhaDev", DateTime.Now),
+            new Pessoa(3, "444.222.198-25", "RonaldinhoDev", DateTime.Now),
+            new Pessoa(4, "444.222.294-29", "DilminhaDev", DateTime.Now)
         };
 
         public static void Add(Pessoa pessoa)

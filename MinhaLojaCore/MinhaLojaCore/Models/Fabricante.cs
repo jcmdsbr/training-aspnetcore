@@ -7,6 +7,5 @@ namespace MinhaLojaCore.Models
         public Guid Id { get; set; }
 
         public string Cnpj { get; set; }
-
     }
 }

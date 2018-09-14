@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MinhaLojaCore.Context;
-using System;
+﻿using System;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using MinhaLojaCore.Context;
 
 namespace MinhaLojaCore.Controllers
 {
@@ -9,17 +9,17 @@ namespace MinhaLojaCore.Controllers
     [ApiController]
     public class CategoriaController : Controller
     {
-        private readonly MinhaLojaContexto minhaLojaContexto;
+        private readonly MinhaLojaContexto _minhaLojaContexto;
 
         public CategoriaController(MinhaLojaContexto minhaLojaContexto)
         {
-            this.minhaLojaContexto = minhaLojaContexto;
+            _minhaLojaContexto = minhaLojaContexto;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var categorias = minhaLojaContexto.Categorias.ToList();
+            var categorias = _minhaLojaContexto.Categorias.ToList();
 
             return Ok(categorias);
         }
@@ -27,7 +27,7 @@ namespace MinhaLojaCore.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
-            var categoria = minhaLojaContexto.Categorias.FirstOrDefault(x => x.Id == id);
+            var categoria = _minhaLojaContexto.Categorias.FirstOrDefault(x => x.Id == id);
 
             if (categoria == null) return NoContent();
 

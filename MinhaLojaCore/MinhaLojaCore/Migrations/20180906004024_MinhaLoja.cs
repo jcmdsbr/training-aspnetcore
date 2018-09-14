@@ -8,36 +8,30 @@ namespace MinhaLojaCore.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.EnsureSchema(
-                name: "dbo");
+                "dbo");
 
             migrationBuilder.CreateTable(
-                name: "categoria",
+                "categoria",
                 schema: "dbo",
                 columns: table => new
                 {
                     cd_categoria = table.Column<Guid>(nullable: false),
                     dc_categoria = table.Column<string>(nullable: true)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_categoria", x => x.cd_categoria);
-                });
+                constraints: table => { table.PrimaryKey("PK_categoria", x => x.cd_categoria); });
 
             migrationBuilder.CreateTable(
-                name: "fabricante",
+                "fabricante",
                 schema: "dbo",
                 columns: table => new
                 {
                     cd_fabricante = table.Column<Guid>(nullable: false),
                     cnpj = table.Column<string>(nullable: true)
                 },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_fabricante", x => x.cd_fabricante);
-                });
+                constraints: table => { table.PrimaryKey("PK_fabricante", x => x.cd_fabricante); });
 
             migrationBuilder.CreateTable(
-                name: "produto",
+                "produto",
                 schema: "dbo",
                 columns: table => new
                 {
@@ -52,15 +46,15 @@ namespace MinhaLojaCore.Migrations
                 {
                     table.PrimaryKey("PK_produto", x => x.cd_produto);
                     table.ForeignKey(
-                        name: "FK_produto_categoria_cd_categoria",
-                        column: x => x.cd_categoria,
+                        "FK_produto_categoria_cd_categoria",
+                        x => x.cd_categoria,
                         principalSchema: "dbo",
                         principalTable: "categoria",
                         principalColumn: "cd_categoria",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_produto_fabricante_cd_fabricante",
-                        column: x => x.cd_fabricante,
+                        "FK_produto_fabricante_cd_fabricante",
+                        x => x.cd_fabricante,
                         principalSchema: "dbo",
                         principalTable: "fabricante",
                         principalColumn: "cd_fabricante",
@@ -68,13 +62,13 @@ namespace MinhaLojaCore.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_produto_cd_categoria",
+                "IX_produto_cd_categoria",
                 schema: "dbo",
                 table: "produto",
                 column: "cd_categoria");
 
             migrationBuilder.CreateIndex(
-                name: "IX_produto_cd_fabricante",
+                "IX_produto_cd_fabricante",
                 schema: "dbo",
                 table: "produto",
                 column: "cd_fabricante");
@@ -83,16 +77,16 @@ namespace MinhaLojaCore.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "produto",
-                schema: "dbo");
+                "produto",
+                "dbo");
 
             migrationBuilder.DropTable(
-                name: "categoria",
-                schema: "dbo");
+                "categoria",
+                "dbo");
 
             migrationBuilder.DropTable(
-                name: "fabricante",
-                schema: "dbo");
+                "fabricante",
+                "dbo");
         }
     }
 }
