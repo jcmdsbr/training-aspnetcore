@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinhaLojaCore", "..\..\..\Downloads\treinamento-cast-web-apis-aspnet-core-master\treinamento-cast-web-apis-aspnet-core-master\MinhaLojaCore\MinhaLojaCore.csproj", "{34F69BD5-BBFC-43C3-BFEB-A80A4318269E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinhaLojaCore", "MinhaLojaCore\MinhaLojaCore\MinhaLojaCore.csproj", "{914FE2D0-3E12-42D7-B710-794CD9EBE491}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiPessoa", "..\..\..\Desktop\WebApiPessoa\WebApiPessoa\WebApiPessoa\WebApiPessoa.csproj", "{9F945FA8-43BD-4E84-890F-D9A93B73D87C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiPessoa", "WebApiPessoa\WebApiPessoa\WebApiPessoa.csproj", "{9F945FA8-43BD-4E84-890F-D9A93B73D87C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{34F69BD5-BBFC-43C3-BFEB-A80A4318269E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34F69BD5-BBFC-43C3-BFEB-A80A4318269E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34F69BD5-BBFC-43C3-BFEB-A80A4318269E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34F69BD5-BBFC-43C3-BFEB-A80A4318269E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{914FE2D0-3E12-42D7-B710-794CD9EBE491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{914FE2D0-3E12-42D7-B710-794CD9EBE491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{914FE2D0-3E12-42D7-B710-794CD9EBE491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{914FE2D0-3E12-42D7-B710-794CD9EBE491}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9F945FA8-43BD-4E84-890F-D9A93B73D87C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9F945FA8-43BD-4E84-890F-D9A93B73D87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F945FA8-43BD-4E84-890F-D9A93B73D87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
